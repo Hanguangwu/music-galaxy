@@ -1,0 +1,23 @@
+:root {
+  --bg-dark: #02030a;
+  --panel-glass: rgba(8, 10, 26, 0.26);
+  --panel-glass-soft: rgba(10, 14, 35, 0.26);
+  --accent: #f5c84c;
+  --accent-strong: #ffdd55;
+  --accent-pink: #ff7bb0;
+  --accent-blue: #4ac8ff;
+  --accent-green: #65f7c4;
+  --accent-red: #ff5c7a;
+  --text-main: #f5f6ff;
+  --text-sub: #a1a6d0;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+
+  /* Source colors */
+  --src-kuwo: #ba68c8;
+  --src-netease: #ff6b6b;
+  --src-tencent: #4dd0e1;
+  --src-migu: #ffb74d;
+  --src-spotify: #1db954;
+  --src-ytmusic: #ff4444;
+  --src-apple: #fa243a;
+}
