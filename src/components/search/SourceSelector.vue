@@ -87,4 +87,14 @@ const allSelected = SUPPORTED_SOURCES.every((s) => props.sources.includes(s.valu
   display: inline-block;
   box-shadow: 0 0 6px currentColor;
 }
+
+@media (max-width: 768px) {
+  .source-chip { padding: 3px 7px; }
+}
+@media (max-width: 480px) {
+  .source-row { gap: 4px; }
+  .source-chip { font-size: 10px; padding: 3px 6px; gap: 3px; }
+  .source-chip input { width: 10px; height: 10px; }
+  .source-dot { width: 6px; height: 6px; }
+}
 </style>

@@ -98,4 +98,14 @@ function onBackdropClick(e: MouseEvent) {
 .modal-body {
   color: var(--text-main, #f5f6ff);
 }
+
+@media (max-width: 768px) {
+  .modal { max-width: 88%; }
+}
+@media (max-width: 480px) {
+  .modal { max-width: 96%; padding: 14px 14px 12px; border-radius: 14px; }
+  .modal-header { font-size: 13px; }
+  .modal-title-icon { width: 20px; height: 20px; font-size: 12px; }
+  .modal-close-btn { font-size: 16px; }
+}
 </style>

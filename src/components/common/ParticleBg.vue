@@ -107,6 +107,8 @@ onMounted(() => {
   resize()
   window.addEventListener('resize', resize)
   window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY })
+  window.addEventListener('touchmove', (e) => { const t = e.touches[0]; if (t) { mouse.x = t.clientX; mouse.y = t.clientY } }, { passive: true })
+  window.addEventListener('touchstart', (e) => { const t = e.touches[0]; if (t) { mouse.x = t.clientX; mouse.y = t.clientY } }, { passive: true })
 
   tick(cvs, ctx)
 })

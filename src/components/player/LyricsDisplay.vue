@@ -168,4 +168,16 @@ watch(
   margin-top: 18px;
   letter-spacing: 0.03em;
 }
+
+@media (max-width: 768px) {
+  .lyrics-container { padding: 8px 12px 6px; }
+}
+@media (max-width: 480px) {
+  .lyrics-container { padding: 6px 10px 4px; margin-top: 4px; }
+  .lyrics-inner { padding: 2px; max-width: 100%; }
+  .lyrics-line { font-size: 14px; margin: 3px 0; }
+  .lyrics-line.active { transform: scale(1.08); }
+  .lyrics-title-line { font-size: 12px; }
+  .lyrics-empty { font-size: 13px; }
+}
 </style>

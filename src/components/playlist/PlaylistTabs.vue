@@ -53,4 +53,9 @@ const tabs: { value: PlaylistTab; key: string }[] = [
   font-weight: 600;
   box-shadow: 0 0 8px rgba(104, 174, 255, 0.7);
 }
+
+@media (max-width: 480px) {
+  .playlist-tabs { font-size: 10px; }
+  .playlist-tab { padding: 2px 8px; }
+}
 </style>

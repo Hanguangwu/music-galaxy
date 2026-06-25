@@ -178,4 +178,22 @@ header {
     display: none;
   }
 }
+@media (max-width: 768px) {
+  .galaxy-box { width: 52px; height: 52px; }
+  .galaxy-icon { font-size: 24px; }
+  .title-text h1 { font-size: 15px; }
+  header { min-height: 52px; padding: 6px 12px; }
+  .header-controls { gap: 8px; }
+}
+@media (max-width: 480px) {
+  .galaxy-box { width: 40px; height: 40px; }
+  .galaxy-icon { font-size: 20px; }
+  .title-text h1 { font-size: 13px; }
+  .title-text p { display: none; }
+  header { padding: 4px 8px; min-height: 44px; }
+  .header-controls { gap: 6px; }
+  .lang-btn { font-size: 10px; padding: 2px 8px; }
+  .shortcut-toggle-btn { width: 24px; height: 24px; font-size: 13px; }
+  .logo-area { gap: 6px; }
+}
 </style>

@@ -142,4 +142,14 @@ function sourceLabel(source: string, lang: 'zh' | 'en'): string {
   color: #02040a;
   box-shadow: 0 0 8px rgba(104, 174, 255, 0.7);
 }
+
+@media (max-width: 480px) {
+  .search-mini-item { padding: 4px 6px; }
+  .mini-title { font-size: 10px; }
+  .mini-artist { font-size: 9px; }
+  .mini-badge { font-size: 9px; padding: 1px 5px; }
+  .mini-source { font-size: 8px; }
+  .mini-add-btn { width: 16px; height: 16px; font-size: 11px; }
+  .mini-right { margin-left: 6px; }
+}
 </style>

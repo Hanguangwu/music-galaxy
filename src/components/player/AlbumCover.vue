@@ -75,4 +75,12 @@ defineProps<{
 @keyframes disc-spin {
   to { transform: rotate(360deg); }
 }
+
+@media (max-width: 768px) {
+  .cover-wrapper { width: 100px; height: 100px; }
+}
+@media (max-width: 480px) {
+  .cover-wrapper { width: 80px; height: 80px; border-radius: 14px; }
+  .cover-disc { width: 50px; height: 50px; border-width: 7px; }
+}
 </style>

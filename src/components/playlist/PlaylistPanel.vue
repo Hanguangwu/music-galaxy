@@ -300,4 +300,14 @@ function setPlayMode(mode: 'list' | 'single' | 'shuffle') {
   gap: 8px;
   margin-top: 4px;
 }
+
+@media (max-width: 480px) {
+  .playlist-bar { flex-wrap: wrap; gap: 4px; padding-bottom: 2px; }
+  .playlist-info { font-size: 10px; }
+  .playlist-right-controls { gap: 4px; flex-wrap: wrap; }
+  .playlist-select-row { gap: 4px; }
+  .playlist-select-row select { font-size: 10px; padding: 2px 6px; }
+  .btn-ghost { font-size: 10px; padding: 2px 8px; }
+  .playmode-btn { width: 22px; height: 22px; font-size: 11px; }
+}
 </style>

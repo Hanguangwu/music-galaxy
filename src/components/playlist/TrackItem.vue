@@ -168,4 +168,13 @@ function sourceLabel(source: string): string {
   background: radial-gradient(circle at 30% 0, rgba(255, 255, 255, 0.15), rgba(80, 180, 130, 0.95));
   box-shadow: 0 0 10px rgba(80, 180, 130, 0.8);
 }
+
+@media (max-width: 480px) {
+  .track-item { padding: 4px 6px; gap: 4px; }
+  .track-index { width: 18px; font-size: 10px; }
+  .track-meta-title { font-size: 11px; }
+  .track-meta-sub { font-size: 9px; }
+  .btn-icon { width: 22px; height: 22px; font-size: 11px; }
+  .track-actions { gap: 3px; }
+}
 </style>

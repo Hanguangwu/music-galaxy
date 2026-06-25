@@ -93,4 +93,11 @@ function sourceLabel(source: string): string {
   border-radius: 50%;
   display: inline-block;
 }
+
+@media (max-width: 480px) {
+  .track-title { font-size: 15px; max-height: 42px; }
+  .track-artist { font-size: 11px; }
+  .track-tags { font-size: 9px; }
+  .source-pill { padding: 1px 6px; font-size: 9px; }
+}
 </style>

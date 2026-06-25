@@ -198,4 +198,17 @@ function onScroll() {
   padding-right: 4px;
   margin-top: 4px;
 }
+
+@media (max-width: 768px) {
+  .search-panel-content { gap: 5px; }
+}
+@media (max-width: 480px) {
+  .search-panel-content { gap: 4px; }
+  .chip { font-size: 9px; padding: 1px 6px; }
+  .limit-row { flex-wrap: wrap; justify-content: flex-start; gap: 4px; }
+  .limit-row select { font-size: 10px; padding: 2px 6px; }
+  .btn-secondary { font-size: 11px; padding: 4px 10px; }
+  .search-results-mini { padding-right: 2px; margin-top: 2px; }
+  .search-stats { font-size: 10px; }
+}
 </style>

@@ -224,4 +224,18 @@ function onVolumeChange(e: Event) {
   width: 90px;
   accent-color: var(--accent, #f5c84c);
 }
+
+@media (max-width: 768px) {
+  .volume-slider { width: 60px; }
+}
+@media (max-width: 480px) {
+  .volume-slider { width: 50px; }
+  .control-row { flex-wrap: wrap; gap: 4px; }
+  .control-secondary { gap: 3px; }
+  .play-btn { width: 36px; height: 36px; font-size: 16px; }
+  .btn-icon { width: 26px; height: 26px; font-size: 12px; }
+  .progress-time { width: 36px; font-size: 10px; }
+  .progress-bar-wrapper { height: 5px; }
+  .progress-handle { width: 8px; height: 8px; }
+}
 </style>

@@ -290,4 +290,14 @@ function onCreateNew() {
   font-weight: 500;
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .modal { max-width: 96%; padding: 14px; }
+  .playlist-item { padding: 6px 8px; font-size: 11px; }
+  .track-preview { font-size: 11px; }
+  .modal-input { font-size: 11px; padding: 6px 8px; }
+  .btn-new-playlist { font-size: 11px; }
+  .btn-secondary-confirm { font-size: 11px; padding: 4px 10px; }
+  .btn-ghost { font-size: 10px; padding: 2px 8px; }
+}
 </style>

@@ -41,4 +41,8 @@ defineProps<{
     transform: translateX(-50%) translateY(0);
   }
 }
+
+@media (max-width: 480px) {
+  #toast { font-size: 10px; padding: 6px 12px; max-width: 85vw; white-space: normal; }
+}
 </style>

@@ -91,4 +91,11 @@ function onKeydown(e: KeyboardEvent) {
   transform: translateY(1px) scale(0.97);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.85);
 }
+
+@media (max-width: 480px) {
+  .search-row { padding: 1px 1px 1px 8px; }
+  .input { font-size: 12px; padding: 6px 8px; }
+  .btn { font-size: 11px; padding: 4px 10px; }
+  .search-prefix { font-size: 12px; margin-right: 4px; }
+}
 </style>

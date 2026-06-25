@@ -263,6 +263,22 @@ onMounted(() => {
   }
 }
 
+/* Mobile & Tablet Responsive */
+@media (max-width: 600px) {
+  .app { margin: 10px; padding: 8px; border-radius: 16px; height: calc(100vh - 20px); }
+  .layout { gap: 8px; }
+  .shortcut-grid { grid-template-columns: 1fr; }
+  :deep(.panel) { padding: 8px; border-radius: 14px; }
+}
+@media (max-width: 480px) {
+  .app { margin: 6px; padding: 6px; border-radius: 12px; height: calc(100vh - 12px); }
+  .layout { gap: 6px; }
+  :deep(.panel) { padding: 6px; border-radius: 12px; }
+  :deep(.panel-title) { font-size: 12px; }
+  :deep(.panel-title .icon) { font-size: 13px; }
+  :deep(.panel-header) { margin-bottom: 4px; }
+}
+
 /* Shortcut modal styles */
 .shortcut-desc {
   margin: 2px 0 8px;

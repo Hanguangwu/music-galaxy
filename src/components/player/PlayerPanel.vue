@@ -209,4 +209,15 @@ function statusText(): string {
   color: var(--text-sub, #a1a6d0);
   font-size: 11px;
 }
+
+@media (max-width: 768px) {
+  .player-top { gap: 8px; min-height: auto; }
+}
+@media (max-width: 480px) {
+  .player-top { flex-direction: column; align-items: center; gap: 6px; }
+  .track-title-row { flex-direction: column; gap: 4px; }
+  .player-actions { flex-direction: row; }
+  .btn-icon { width: 26px; height: 26px; font-size: 12px; }
+  .chip { font-size: 9px; padding: 1px 6px; }
+}
 </style>
