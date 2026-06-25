@@ -95,6 +95,11 @@ onMounted(() => {
     const saved = localStorage.getItem('music-galaxy-lang')
     if (saved === 'en' || saved === 'zh') lang.value = saved
   } catch { /* noop */ }
+
+  // Listen for toast events from child components
+  window.addEventListener('show-toast', ((e: CustomEvent) => {
+    showToast(e.detail)
+  }) as EventListener)
 })
 </script>
 

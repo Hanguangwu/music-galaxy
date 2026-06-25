@@ -4,10 +4,11 @@ import { usePlayerStore } from '@/stores/player'
 import { useSearchStore } from '@/stores/search'
 import { usePlaylistStore } from '@/stores/playlist'
 import { t } from '@/utils/i18n'
-import type { PlaylistTab } from '@/types/music'
+import type { PlaylistTab, Track } from '@/types/music'
 import PlaylistTabs from './PlaylistTabs.vue'
 import TrackItem from './TrackItem.vue'
 import Modal from '@/components/common/Modal.vue'
+import AddToPlaylistModal from '@/components/common/AddToPlaylistModal.vue'
 
 const props = defineProps<{
   lang: 'zh' | 'en'
@@ -19,6 +20,8 @@ const playlistStore = usePlaylistStore()
 
 const showNewPlaylistModal = ref(false)
 const newPlaylistName = ref('')
+const addPlaylistTrack = ref<Track | null>(null)
+const showAddPlaylistModal = ref(false)
 
 const activeTracks = computed(() => {
   const tab = playlistStore.activeTab
@@ -50,6 +53,11 @@ function onCreatePlaylist() {
   playlistStore.activeTab = 'playlist'
   newPlaylistName.value = ''
   showNewPlaylistModal.value = false
+}
+
+function onAddToPlaylist(track: Track) {
+  addPlaylistTrack.value = track
+  showAddPlaylistModal.value = true
 }
 
 function setPlayMode(mode: 'list' | 'single' | 'shuffle') {
@@ -130,6 +138,7 @@ function setPlayMode(mode: 'list' | 'single' | 'shuffle') {
           :lang="lang"
           @play="onPlayTrack(track)"
           @toggle-favorite="onToggleFav(track)"
+          @add-to-playlist="onAddToPlaylist(track)"
         />
       </div>
     </div>
@@ -152,6 +161,13 @@ function setPlayMode(mode: 'list' | 'single' | 'shuffle') {
         <button class="btn btn-secondary-confirm" @click="onCreatePlaylist">{{ t('modalConfirm', lang) }}</button>
       </div>
     </Modal>
+
+    <AddToPlaylistModal
+      :show="showAddPlaylistModal"
+      :track="addPlaylistTrack"
+      :lang="lang"
+      @close="showAddPlaylistModal = false"
+    />
   </section>
 </template>
 

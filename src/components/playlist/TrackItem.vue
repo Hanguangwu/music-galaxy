@@ -13,6 +13,7 @@ defineProps<{
 const emit = defineEmits<{
   play: []
   'toggle-favorite': []
+  'add-to-playlist': []
 }>()
 
 function sourceLabel(source: string): string {
@@ -62,6 +63,11 @@ function sourceLabel(source: string): string {
         :title="t('favorite', 'zh')"
         @click="emit('toggle-favorite')"
       >❤</button>
+      <button
+        class="btn-icon btn-add-playlist"
+        :title="lang === 'zh' ? '加入歌单' : 'Add to playlist'"
+        @click="emit('add-to-playlist')"
+      >+</button>
     </div>
   </div>
 </template>
@@ -154,5 +160,12 @@ function sourceLabel(source: string): string {
   background: radial-gradient(circle at 30% 0, rgba(255, 255, 255, 0.2), var(--accent-red, #ff5c7a));
   color: #fff5f7;
   box-shadow: 0 0 12px rgba(255, 92, 122, 0.95);
+}
+.btn-add-playlist {
+  background: radial-gradient(circle at 30% 0, rgba(255, 255, 255, 0.05), rgba(80, 180, 130, 0.85));
+}
+.btn-add-playlist:hover {
+  background: radial-gradient(circle at 30% 0, rgba(255, 255, 255, 0.15), rgba(80, 180, 130, 0.95));
+  box-shadow: 0 0 10px rgba(80, 180, 130, 0.8);
 }
 </style>

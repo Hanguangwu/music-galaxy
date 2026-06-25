@@ -8,6 +8,7 @@ defineProps<{
 
 const emit = defineEmits<{
   play: []
+  'add-to-playlist': []
 }>()
 
 function sourceLabel(source: string, lang: 'zh' | 'en'): string {
@@ -45,6 +46,11 @@ function sourceLabel(source: string, lang: 'zh' | 'en'): string {
         />
         <span>{{ sourceLabel(track.source, lang) }}</span>
       </div>
+      <button
+        class="mini-add-btn"
+        :title="lang === 'zh' ? '加入歌单' : 'Add to playlist'"
+        @click.stop="emit('add-to-playlist')"
+      >+</button>
     </div>
   </div>
 </template>
@@ -113,5 +119,27 @@ function sourceLabel(source: string, lang: 'zh' | 'en'): string {
   border-radius: 50%;
   display: inline-block;
   box-shadow: 0 0 6px currentColor;
+}
+.mini-add-btn {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text-sub, #a1a6d0);
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  margin-top: 2px;
+}
+.mini-add-btn:hover {
+  background: radial-gradient(circle at 30% 0, rgba(255, 255, 255, 0.15), rgba(104, 174, 255, 0.9));
+  color: #02040a;
+  box-shadow: 0 0 8px rgba(104, 174, 255, 0.7);
 }
 </style>

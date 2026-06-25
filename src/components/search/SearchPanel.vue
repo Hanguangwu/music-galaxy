@@ -3,10 +3,11 @@ import { ref } from 'vue'
 import { useSearchStore } from '@/stores/search'
 import { usePlayerStore } from '@/stores/player'
 import { t } from '@/utils/i18n'
-import type { MusicSource } from '@/types/music'
+import type { MusicSource, Track } from '@/types/music'
 import SearchInput from './SearchInput.vue'
 import SourceSelector from './SourceSelector.vue'
 import SearchResultItem from './SearchResultItem.vue'
+import AddToPlaylistModal from '@/components/common/AddToPlaylistModal.vue'
 
 const props = defineProps<{
   lang: 'zh' | 'en'
@@ -19,6 +20,8 @@ const keyword = ref(searchStore.keyword)
 const selectedSources = ref<MusicSource[]>([...searchStore.enabledSources])
 const limit = ref(searchStore.perSourceLimit)
 const listRef = ref<HTMLElement | null>(null)
+const addPlaylistTrack = ref<Track | null>(null)
+const showAddPlaylistModal = ref(false)
 
 function doSearch(reset = true) {
   searchStore.keyword = keyword.value
@@ -36,6 +39,11 @@ function onResultPlay(track: any) {
   if (idx >= 0) {
     playerStore.play(track, 'results', idx)
   }
+}
+
+function onAddToPlaylist(track: Track) {
+  addPlaylistTrack.value = track
+  showAddPlaylistModal.value = true
 }
 
 function onScroll() {
@@ -106,10 +114,18 @@ function onScroll() {
           :index="idx"
           :lang="lang"
           @play="onResultPlay(track)"
+          @add-to-playlist="onAddToPlaylist(track)"
         />
       </div>
     </div>
   </section>
+
+  <AddToPlaylistModal
+    :show="showAddPlaylistModal"
+    :track="addPlaylistTrack"
+    :lang="lang"
+    @close="showAddPlaylistModal = false"
+  />
 </template>
 
 <style scoped>
